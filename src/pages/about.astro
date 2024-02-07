@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 const pageTitle: string = "Sobre Mim";
 
 const identify = {
@@ -21,6 +23,10 @@ const skills: Array<string> = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "rgba(57, 172, 255)";
+const fontWeight = "500";
+const fontFamily = "Lora, serif";
 ---
 
 <html lang="pt-br">
@@ -30,84 +36,79 @@ const goal = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <nav class="nav">
+    <header class="header">
+      <nav>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/about/">Sobre</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>{pageTitle}</h1>
+      <h2>... e meu novo site Astro!</h2>
+
+      <p>
+        Estou resolvendo o tutorial introdutório do Astro. Esta é a segunda
+        página no meu website, e é a primeira que eu mesmo construí!
+      </p>
+
+      <p>
+        Este site será atualizado enquanto eu completo mais desse tutorial,
+        então continue verificando e veja como minha jornada está indo!
+      </p>
+
+      <p>Aqui estão alguns fatos sobre mim:</p>
       <ul>
-        <li><a href="/">Início</a></li>
-        <li><a href="/about/">Sobre</a></li>
-        <li><a href="/blog/">Blog</a></li>
+        <li>Meu nome é {identify.firstName}</li>
+        <li>
+          Eu sou do {identify.country} e trabalho como {identify.occupation}.
+        </li>
+        {
+          identify.hobbies.length > 0 && (
+            <li>Eu gosto de {identify.hobbies.join(", ")}.</li>
+          )
+        }
       </ul>
-    </nav>
 
-    <h1>{pageTitle}</h1>
-    <h2>... e meu novo site Astro!</h2>
+      <p>Minhas habilidades são:</p>
+      <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+      </ul>
 
-    <p>
-      Estou resolvendo o tutorial introdutório do Astro. Esta é a segunda página
-      no meu website, e é a primeira que eu mesmo construí!
-    </p>
+      {happy && <p>Estou feliz em estar aprendendo Astro!</p>}
 
-    <p>
-      Este site será atualizado enquanto eu completo mais desse tutorial, então
-      continue verificando e veja como minha jornada está indo!
-    </p>
+      {finished && <p>Eu terminei esse tutorial!</p>}
 
-    <p>Aqui estão alguns fatos sobre mim:</p>
-    <ul>
-      <li>Meu nome é {identify.firstName}</li>
-      <li>
-        Eu sou do {identify.country} e trabalho como {identify.occupation}.
-      </li>
       {
-        identify.hobbies.length > 0 && (
-          <li>Eu gosto de {identify.hobbies.join(", ")}.</li>
+        goal === 3 ? (
+          <p>Minha meta é terminar em 3 dias.</p>
+        ) : (
+          <p>Minha meta não é em 3 dias.</p>
         )
       }
-    </ul>
-
-    <p>Minhas habilidades são:</p>
-    <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
-    </ul>
-
-    {happy && <p>Estou feliz em estar aprendendo Astro!</p>}
-
-    {finished && <p>Eu terminei esse tutorial!</p>}
-
-    {
-      goal === 3 ? (
-        <p>Minha meta é terminar em 3 dias.</p>
-      ) : (
-        <p>Minha meta não é em 3 dias.</p>
-      )
-    }
+    </main>
   </body>
 </html>
 
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+<style define:vars={{ skillColor, fontWeight, fontFamily }}>
+  h1 {
+    color: purple;
+    font-size: 2rem;
   }
 
-  .nav {
-    padding: 12px 0;
-    width: 100%;
-    background: #f0f0f0;
-  }
-
-  .nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    list-style: none;
-    padding: 0;
-  }
-
-  .nav a {
-    text-decoration: none;
-    color: #333;
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    font-family: var(--fontFamily);
   }
 </style>
