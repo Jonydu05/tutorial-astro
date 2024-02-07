@@ -1,0 +1,40 @@
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Início</a></li>
+      <li><a href="/about/">Sobre</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+<style>
+  header {
+    padding: 1rem 10%;
+    width: 100%;
+    background: #f0f0f0;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+  }
+
+  header a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    &:hover {
+      color: rgb(0, 0, 0);
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+  }
+</style>

@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/footer.astro";
 
 const pageTitle: string = "Sobre Mim";
 
@@ -10,15 +12,7 @@ const identify = {
   hobbies: ["Programar", "Jogar jogos", "Corrida", "Ler livros"],
 };
 
-const skills: Array<string> = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "Angular",
-  "Astro",
-  "Escrever Documentação",
-];
+const skills: Array<string> = ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Astro", "Escrever Documentação"];
 
 const happy = true;
 const finished = false;
@@ -42,29 +36,25 @@ const fontFamily = "Lora, serif";
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
-    <header class="header">
-      <nav>
-        <ul>
-          <li><a href="/">Início</a></li>
-          <li><a href="/about/">Sobre</a></li>
-          <li><a href="/blog/">Blog</a></li>
-        </ul>
-      </nav>
-    </header>
+    <Header />
     <main>
       <h1>{pageTitle}</h1>
       <h2>... e meu novo site Astro!</h2>
 
       <p>
-        Estou resolvendo o tutorial introdutório do Astro. Esta é a segunda
-        página no meu website, e é a primeira que eu mesmo construí!
+        Estou resolvendo o tutorial introdutório do Astro. Esta é a segunda página no meu website, e é a primeira que eu
+        mesmo construí!
       </p>
 
       <p>
-        Este site será atualizado enquanto eu completo mais desse tutorial,
-        então continue verificando e veja como minha jornada está indo!
+        Este site será atualizado enquanto eu completo mais desse tutorial, então continue verificando e veja como minha
+        jornada está indo!
       </p>
 
       <p>Aqui estão alguns fatos sobre mim:</p>
@@ -73,11 +63,7 @@ const fontFamily = "Lora, serif";
         <li>
           Eu sou do {identify.country} e trabalho como {identify.occupation}.
         </li>
-        {
-          identify.hobbies.length > 0 && (
-            <li>Eu gosto de {identify.hobbies.join(", ")}.</li>
-          )
-        }
+        {identify.hobbies.length > 0 && <li>Eu gosto de {identify.hobbies.join(", ")}.</li>}
       </ul>
 
       <p>Minhas habilidades são:</p>
@@ -89,14 +75,9 @@ const fontFamily = "Lora, serif";
 
       {finished && <p>Eu terminei esse tutorial!</p>}
 
-      {
-        goal === 3 ? (
-          <p>Minha meta é terminar em 3 dias.</p>
-        ) : (
-          <p>Minha meta não é em 3 dias.</p>
-        )
-      }
+      {goal === 3 ? <p>Minha meta é terminar em 3 dias.</p> : <p>Minha meta não é em 3 dias.</p>}
     </main>
+    <Footer />
   </body>
 </html>
 

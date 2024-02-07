@@ -1,0 +1,11 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name }: Props = Astro.props;
+---
+
+<span class="material-symbols-outlined">
+  {name}
+</span>
