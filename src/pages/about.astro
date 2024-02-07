@@ -1,5 +1,26 @@
 ---
+const pageTitle: string = "Sobre Mim";
 
+const identify = {
+  firstName: "João",
+  country: "Brasil",
+  occupation: "Programador",
+  hobbies: ["Programar", "Jogar jogos", "Corrida", "Ler livros"],
+};
+
+const skills: Array<string> = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Angular",
+  "Astro",
+  "Escrever Documentação",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="pt-br">
@@ -8,7 +29,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Sobre mim</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <nav class="nav">
@@ -19,7 +40,7 @@
       </ul>
     </nav>
 
-    <h1>Sobre Mim</h1>
+    <h1>{pageTitle}</h1>
     <h2>... e meu novo site Astro!</h2>
 
     <p>
@@ -31,6 +52,36 @@
       Este site será atualizado enquanto eu completo mais desse tutorial, então
       continue verificando e veja como minha jornada está indo!
     </p>
+
+    <p>Aqui estão alguns fatos sobre mim:</p>
+    <ul>
+      <li>Meu nome é {identify.firstName}</li>
+      <li>
+        Eu sou do {identify.country} e trabalho como {identify.occupation}.
+      </li>
+      {
+        identify.hobbies.length > 0 && (
+          <li>Eu gosto de {identify.hobbies.join(", ")}.</li>
+        )
+      }
+    </ul>
+
+    <p>Minhas habilidades são:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    {happy && <p>Estou feliz em estar aprendendo Astro!</p>}
+
+    {finished && <p>Eu terminei esse tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>Minha meta é terminar em 3 dias.</p>
+      ) : (
+        <p>Minha meta não é em 3 dias.</p>
+      )
+    }
   </body>
 </html>
 
@@ -38,14 +89,6 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
 
   .nav {
