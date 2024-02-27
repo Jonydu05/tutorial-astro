@@ -21,8 +21,41 @@ const { platform, user } = Astro.props;
     &:hover {
       transform: scale(105%);
       opacity: 1;
-      text-decoration: none;
+      text-underline-offset: 0.3em;
+      animation: 2s ease-in-out infinite alternate gradient;
     }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-size: 400% 400%;
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-size: 400% 400%;
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-size: 400% 400%;
+      background-position: 150% 50%;
+    }
+  }
+
+  a:hover {
+    color: #1a1a1a;
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(255, 0, 0, 1) 0%,
+      rgba(255, 154, 0, 1) 25%,
+      rgba(208, 222, 33, 1) 50%,
+      rgba(79, 220, 74, 1) 75%,
+      rgba(63, 218, 216, 1) 90%,
+      rgba(255, 0, 0, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   a.youtube:hover {
@@ -31,7 +64,8 @@ const { platform, user } = Astro.props;
       0deg,
       rgba(144, 3, 12, 1) 0%,
       rgba(191, 38, 38, 1) 50%,
-      rgba(238, 15, 15, 1) 100%
+      rgba(238, 15, 15, 1) 90%,
+      rgba(144, 3, 12, 1) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,7 +79,8 @@ const { platform, user } = Astro.props;
       rgba(170, 44, 92, 1) 25%,
       rgba(236, 0, 117, 1) 50%,
       rgba(255, 105, 3, 1) 75%,
-      rgba(255, 211, 102, 1) 100%
+      rgba(255, 211, 102, 1) 90%,
+      rgba(69, 100, 220, 1) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -57,7 +92,8 @@ const { platform, user } = Astro.props;
       0deg,
       rgba(36, 41, 46, 1) 0%,
       rgba(43, 49, 55, 1) 50%,
-      rgba(45, 186, 78, 1) 100%
+      rgba(45, 186, 78, 1) 90%,
+      rgba(36, 41, 46, 1) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -65,7 +101,12 @@ const { platform, user } = Astro.props;
 
   a.facebook:hover {
     color: rgb(59, 89, 152);
-    background: -webkit-linear-gradient(0deg, rgba(59, 89, 152, 1) 0%, rgba(139, 157, 195, 1) 100%);
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(59, 89, 152, 1) 0%,
+      rgba(139, 157, 195, 1) 50%,
+      rgba(59, 89, 152, 1) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
