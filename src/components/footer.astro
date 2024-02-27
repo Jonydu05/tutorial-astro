@@ -1,13 +1,11 @@
 ---
-const platform = "github";
-const username = "jonydu05";
+import Social from './social.astro';
 ---
 
 <footer>
-  <p>
-    Aprenda mais sobre meus projetos em
-    <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>!
-  </p>
+  <div>
+    <Social />
+  </div>
 </footer>
 <style>
   footer {
@@ -16,24 +14,15 @@ const username = "jonydu05";
     background: #f0f0f0;
     min-height: 50px;
     display: flex;
-    justify-content: center;
     align-items: center;
     border-top: 1px solid #eaeaea;
     margin-top: auto;
   }
 
-  footer a {
-    text-decoration: none;
-    color: rgb(157, 45, 87);
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    font-weight: 500;
-
-    &:hover {
-      color: rgb(157, 45, 87);
-      opacity: 1;
-      text-decoration: underline;
-      text-underline-offset: 0.25em;
-    }
+  footer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
   }
 </style>
