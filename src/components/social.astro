@@ -1,7 +1,43 @@
 ---
-const { platform, username } = Astro.props;
+const { platform, user } = Astro.props;
 ---
 
-<p>
-  <a href={`https://www.${platform}.com/${username}`} target="_blank">{platform}</a>!
-</p>
+<a class={platform} href={`https://www.${platform}.com/${user}`} target="_blank">{platform}</a>
+
+<style>
+  a {
+    color: #1a1a1a;
+    opacity: 0.8;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: Lora;
+    line-height: 1.5;
+    letter-spacing: 0.25px;
+    text-transform: capitalize;
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    &:hover {
+      transform: scale(105%);
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+
+  a.youtube:hover {
+    color: #f00;
+  }
+
+  a.instagram:hover {
+    color: #e1306c;
+  }
+
+  a.github:hover {
+    color: #460540;
+  }
+
+  a.facebook:hover {
+    color: #3b5998;
+  }
+</style>

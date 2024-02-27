@@ -4,7 +4,10 @@ import Social from './social.astro';
 
 <footer>
   <div>
-    <Social />
+    <Social platform="instagram" user="jonydu05" />
+    <Social platform="github" user="jonydu05" />
+    <Social platform="facebook" user="jonydu05" />
+    <Social platform="youtube" user="jonydu05" />
   </div>
 </footer>
 <style>
@@ -12,7 +15,7 @@ import Social from './social.astro';
     padding: 1rem 10%;
     width: 100%;
     background: #f0f0f0;
-    min-height: 50px;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     border-top: 1px solid #eaeaea;
@@ -22,6 +25,7 @@ import Social from './social.astro';
   footer > div {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
     align-items: center;
     width: 25%;
   }
