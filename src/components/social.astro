@@ -26,18 +26,47 @@ const { platform, user } = Astro.props;
   }
 
   a.youtube:hover {
-    color: #f00;
+    color: rgb(144, 3, 12);
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(144, 3, 12, 1) 0%,
+      rgba(191, 38, 38, 1) 50%,
+      rgba(238, 15, 15, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   a.instagram:hover {
-    color: #e1306c;
+    color: rgb(69, 100, 220);
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(69, 100, 220, 1) 0%,
+      rgba(170, 44, 92, 1) 25%,
+      rgba(236, 0, 117, 1) 50%,
+      rgba(255, 105, 3, 1) 75%,
+      rgba(255, 211, 102, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   a.github:hover {
-    color: #460540;
+    color: rgb(36, 41, 46);
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(36, 41, 46, 1) 0%,
+      rgba(43, 49, 55, 1) 50%,
+      rgba(45, 186, 78, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   a.facebook:hover {
-    color: #3b5998;
+    color: rgb(59, 89, 152);
+    background: -webkit-linear-gradient(0deg, rgba(59, 89, 152, 1) 0%, rgba(139, 157, 195, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
