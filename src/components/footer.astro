@@ -11,7 +11,7 @@ import Social from './social.astro';
     <Social platform="twitch" user="jonydu05" />
   </div>
 </footer>
-<style>
+<style >
   footer {
     padding: 1rem 10%;
     width: 100%;
@@ -25,8 +25,16 @@ import Social from './social.astro';
 
   footer > div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 16px;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    footer > div {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 </style>

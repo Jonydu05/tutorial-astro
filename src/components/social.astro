@@ -11,15 +11,13 @@ const { platform, user } = Astro.props;
     text-decoration: underline;
     text-underline-offset: 0.2em;
     cursor: pointer;
-    font-weight: 500;
-    font-family: Lora;
-    line-height: 1.5;
+    font: 500 1rem/1.5 Lora, serif;
     letter-spacing: 0.25px;
     text-transform: capitalize;
     transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
     &:hover {
-      transform: scale(105%);
+      transform: scale(115%);
       opacity: 1;
       text-underline-offset: 0.3em;
       animation: 2s ease-in-out infinite alternate gradient;
